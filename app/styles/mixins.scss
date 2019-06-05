@@ -1,0 +1,47 @@
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-top-right($x, $y){
+  position: absolute;
+  top: $x;
+  right: $y;
+}
+@mixin absolute-top-left($x, $y){
+  position: absolute;
+  top: $x;
+  left: $y;
+}
+
+@mixin absolute-bottom-right($x, $y){
+  position: absolute;
+  bottom: $x;
+  right: $y;
+}
+
+@mixin absolute-bottom-left($x, $y){
+  position: absolute;
+  bottom: $x;
+  left: $y;
+}
+
+@mixin reset-absolute{
+  position: inherit;
+  top: inherit;
+  left: inherit;
+  right: inherit;
+  bottom: inherit;
+}
+
+@mixin dimensions($width, $height){
+  width: $width;
+  height: $height;
+}
+
+@mixin middle-ib{
+  display: inline-block;
+  vertical-align: middle;
+}
