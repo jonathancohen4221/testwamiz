@@ -62,3 +62,13 @@
   url('../fonts/NunitoRegular.ttf') format('truetype'),
   url('../fonts/NunitoRegular.svg#NunitoRegular') format('svg');
 }
+
+@font-face {
+  font-family: "Nunito-Bold";
+  src: url('../fonts/NunitoBold.eot');
+  src: url('../fonts/NunitoBold.eot') format('embedded-opentype'),
+  url('../fonts/NunitoBold.woff2') format('woff2'),
+  url('../fonts/NunitoBold.woff') format('woff'),
+  url('../fonts/NunitoBold.ttf') format('truetype'),
+  url('../fonts/NunitoBold.svg#NunitoBold') format('svg');
+}

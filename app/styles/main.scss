@@ -96,6 +96,8 @@ body{
   main{
     float:left;
     text-align: center;
+    width: calc(100% - 664px);
+    padding-top: 39px;
 
     #breadcrumb{
       font-family: Nunito-Light;
@@ -104,8 +106,8 @@ body{
       margin-bottom: 42px;
 
       li{
-        @include middle-ib;
-        margin-right:10px;
+        display: inline-block;
+        margin-right:3px;
 
         &.active a{
           color: $c-light-grey-blue
@@ -114,22 +116,23 @@ body{
       a{
         color: $c-warm-grey-two;
       }
+
       li:first-of-type{
         &:before{
           content:"←";
           @include middle-ib;
           color: $c-warm-grey-two;
-          padding-right: 5px;
+          padding-right: 3px;
         }
       }
 
       li:not(:first-child) {
         &:before{
           content:"›";
-          @include middle-ib;
+          display: inline-block;
           color: $c-warm-grey-two;
           font-size: 20px;
-          padding-right: 5px;
+          padding-right: 3px;
         }
       }
     }
@@ -142,7 +145,213 @@ body{
     .subtitle{
       font-size: 18px;
       color: $c-warm-grey-three;
+      margin-bottom: 40px;
     }
+
+    .id{
+      width: 650px;
+      margin: auto;
+    }
+
+    figure{
+      overflow: hidden;
+
+      #flip{
+        float: right;
+
+        p{
+          font-size: 14px;
+          font-family: Nunito-Regular;
+          text-align: center;
+          margin-top: 5px;
+        }
+
+        span{
+          width: 39px;
+          height: 39px;
+          background-color: $c-light-blue-grey;
+          border-radius: 50%;
+          display: block;
+          position: relative;
+          border: 1px solid transparent;
+          cursor: pointer;
+
+          &:before{
+            content:"";
+            display: block;
+            @include centerer;
+            background-color: $c-white-five;
+            -webkit-mask-image: url("../images/eye.svg");
+            mask-image: url("../images/eye.svg");
+            @include dimensions(20px,20px);
+          }
+
+          &:hover{
+            background-color: $c-white-five;
+            border: 1px solid $c-light-blue-grey;
+
+            &:before {
+              background-color: $c-light-blue-grey;
+            }
+          }
+        }
+      }
+    }
+
+    figcaption{
+      font-size: 13px;
+      color: $c-warm-grey-two;
+      font-family: Nunito-Light;
+      margin-top: 10px;
+      text-align: left;
+
+      span:first-of-type{
+        font-family: Nunito-SemiBold;
+        font-weight: 600;
+      }
+
+      span:last-of-type{
+        color: $c-greyish;
+      }
+    }
+  }
+
+  .race-desc{
+    margin-top: 25px;
+    color: $c-greyish-brown;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: left;
+  }
+
+  #dna{
+    width: 650px;
+    height: 320px;
+    border: 1px dashed $c-warm-grey-two ;
+    padding: 0 24%;
+    box-sizing: border-box;
+    padding-top: 50px;
+    margin-top: 60px;
+    position: relative;
+
+    #dna-picto{
+      position: absolute;
+      top: -44px;
+      background: white;
+      padding: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .dna-title{
+      font-family: "Poppins-Bold";
+      color: $c-greyish-brown;
+      font-size: 17px;
+      line-height: 26px;
+    }
+
+    ul{
+      list-style: disc;
+      margin-top: 25px;
+    }
+
+    li{
+      font-family: "Poppins-Regular";
+      font-size: 16px;
+      line-height: 26px;
+      text-align: left;
+      color: $c-warm-grey-two;
+      span{
+        font-family: "Poppins-SemiBold";
+      }
+    }
+  }
+  #specifications{
+    margin-top: 10px;
+    text-align: left;
+
+    & > div{
+      background-color: $c-white-two;
+      padding: 20px 41px 20px;
+
+      &:not(:last-child){
+        margin-bottom: 10px;
+      }
+    }
+
+
+
+    h2{
+      font-family: "Poppins-Bold";
+      color: $c-greyish-brown;
+      font-size: 18px;
+      line-height: 26px;
+      position: relative;
+      background-color: $c-white-two;
+
+      &:after{
+        content:"—";
+        @include absolute-top-right(0px,-20px);
+        background-color: $c-light-blue-grey;
+        color: $c-white-five;
+        border-radius: 50%;
+        @include dimensions(28px,28px);
+        text-align: center;
+        cursor: pointer;
+        line-height: 30px;
+      }
+    }
+
+    dt{
+      font-family: "Nunito-Bold";
+      color: $c-greyish-brown;
+      line-height: 26px;
+      margin-bottom: 5px;
+
+      &:first-of-type{
+        padding-top: 35px;
+      }
+
+      &:after{
+        content:"";
+        
+      }
+    }
+
+    dd{
+      margin-bottom: 30px;
+      color: $c-warm-grey-two;
+    }
+
+    .table-spec {
+      width:260px;
+      height:92px;
+      border:1px dashed $c-warm-grey-two;
+      border-collapse:collapse;
+      padding:5px;
+    }
+
+    .table-spec td {
+      border:1px dashed $c-warm-grey-two;
+      padding:5px;
+      text-align: center;
+      vertical-align: middle;
+      color: $c-warm-grey-two;
+    }
+
+
+    .hide {
+      display: none;
+    }
+  }
+
+
+
+  .advertise{
+    float: right;
+    @include dimensions(300px,600px);
+    margin-top: 39px;
+    margin-right: 38px;
   }
 }
 
