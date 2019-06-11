@@ -1,0 +1,63 @@
+input[type="checkbox"]:checked,
+input[type="checkbox"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+input[type="checkbox"]:checked + label,
+input[type="checkbox"]:not(:checked) + label
+{
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 30px;
+  display: inline-block;
+}
+input[type="checkbox"]:checked + label:before,
+input[type="checkbox"]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  /*
+  border: 2px solid #05186F;
+  */
+  background: #fff
+}
+input[type="checkbox"]:checked + label:after,
+input[type="checkbox"]:not(:checked) + label:after {
+  content: '';
+  width: 25px;
+  height: 25px;
+  background-image: url("../images/icon-check.png");
+  position: absolute;
+  top: 2px;
+  left: -4px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+input[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+
+/* custom checkbox wamiz*/
+input[type="checkbox"] + label{
+  margin-bottom: 19px;
+  vertical-align: middle;
+  display: inline-block;
+  font-family: "Poppins-Regular";
+
+  &:first-of-type{
+    margin-right: 40px;
+  }
+
+}
