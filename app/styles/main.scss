@@ -76,6 +76,8 @@ body{
         font-family: Poppins-Bold;
         line-height: 23px;
         text-align: left;
+        max-width: 90%;
+        display: block;
       }
     }
     .btn{
@@ -360,9 +362,21 @@ body{
     li{
       @include dimensions(41px,41px);
       border-radius: 50%;
+      position: relative;
 
       &:not(:last-child) {
         margin-right: 7px;
+      }
+
+      a{
+        @include dimensions(100%,100%);
+        display: block;
+
+        img{
+          display: block;
+          @include centerer;
+          @include dimensions(20px,20px);
+        }
       }
     }
     .fb{
@@ -417,7 +431,6 @@ body{
       @include dimensions(100%,100%);
 
       img{
-        content:"";
         display: block;
         @include centerer;
         @include dimensions(20px,20px);
