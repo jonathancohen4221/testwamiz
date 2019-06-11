@@ -38,3 +38,10 @@ function accordionToggle (e) {
 for (var i = 0; i < accordionHeadline.length; i++) {
     accordionHeadline[i].addEventListener('click', accordionToggle);
 }
+
+
+/* MENU */
+
+function switchMenu(x) {
+    x.classList.toggle("change");
+}

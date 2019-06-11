@@ -43,6 +43,70 @@ body{
     }
   }
 
+  header{
+    @include dimensions(100%,75px);
+    background-color: $c-white-two;
+    padding: 15px 16px;
+    overflow: hidden;
+
+    .header-right{
+      float: right;
+
+      .socials{
+        @include middle-ib;
+      }
+
+      li{
+        @include middle-ib;
+        @include dimensions(38px,38px);
+        background-color: $c-warm-grey-three;
+        border-radius: 50%;
+        position: relative;
+
+        a{
+          @include dimensions(100%,100%);
+
+          img{
+            display: block;
+            @include centerer;
+            @include dimensions(20px,20px);
+          }
+        }
+
+        &:not(:last-child) {
+          margin-right: 7px;
+        }
+      }
+    }
+
+    .menu{
+      @include middle-ib;
+      margin-left: 26px;
+    }
+
+    .bar1, .bar2, .bar3 {
+      width: 17.2px;
+      height: 2.3px;
+      background-color: $c-slate-grey-two;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+
+    .change{
+      .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-8px, 4px);
+        transform: rotate(-45deg) translate(-8px, 4px);
+      }
+      .bar2 {
+        opacity: 0;
+      }
+      .bar3 {
+        -webkit-transform: rotate(45deg) translate(-7px, -3px);
+        transform: rotate(45deg) translate(-7px, -3px);
+      }
+    }
+  }
+
   aside{
     @include dimensions(300px,672px);
     padding-top: 27px;
