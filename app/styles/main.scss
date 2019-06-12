@@ -80,7 +80,7 @@ body{
 
       .socials{
         display: none;
-        
+
         @media #{$w-desktop} {
           @include middle-ib;
         }
@@ -92,6 +92,7 @@ body{
         background-color: $c-warm-grey-three;
         border-radius: 50%;
         position: relative;
+        @include bg-hover-out;
 
         a{
           @include dimensions(100%,100%);
@@ -105,6 +106,10 @@ body{
 
         &:not(:last-child) {
           margin-right: 7px;
+        }
+
+        &:hover{
+          @include bg-hover-in;
         }
       }
     }
@@ -186,16 +191,22 @@ body{
         @include absolute-top-right(0,0);
         pointer-events: none;
       }
+
       a{
         color: $c-warm-grey-two;
         font-family: Poppins-Bold;
         line-height: 23px;
         text-align: left;
         display: block;
+        @include text-hover-out;
 
         span{
           max-width: 90%;
           display: block;
+        }
+
+        &:hover{
+          @include text-hover-in;
         }
       }
     }
@@ -222,7 +233,7 @@ body{
       bottom: 20px;
       right: 20px;
       z-index: 2;
-      
+
       &.visible{
         display: block;
       }
@@ -305,6 +316,7 @@ body{
 
       #flip{
         float: right;
+        width: 42px;
 
         p{
           font-size: 14px;
@@ -599,6 +611,7 @@ body{
           @include dimensions(20px,20px);
         }
       }
+
     }
     .fb{
       background-color: $c-denim-blue;
@@ -652,6 +665,7 @@ body{
     background-color: $c-warm-grey;
     border-radius: 50%;
     position: relative;
+    @include bg-hover-out;
 
     a{
       @include dimensions(100%,100%);
@@ -665,6 +679,10 @@ body{
 
     &:not(:last-child) {
       margin-right: 7px;
+    }
+
+    &:hover{
+      @include bg-hover-in;
     }
   }
 }
@@ -784,7 +802,13 @@ footer{
           letter-spacing: 1.6px;
           text-align: center;
           color: $c-warm-grey-two;
+          @include text-hover-out;
+
+          &:hover {
+            @include text-hover-in;
+          }
         }
+
         @media #{$w-mobile} {
           display: block;
           margin: 30px auto;
@@ -801,6 +825,11 @@ footer{
           a{
             font-size: 14px;
             color: $c-warm-grey;
+            @include text-hover-out;
+
+            &:hover{
+              @include text-hover-in;
+            }
           }
           &:not(:last-child) {
             margin-bottom: 30px;
@@ -809,6 +838,11 @@ footer{
         li:first-of-type{
           font-size: 16px;
           color: $c-warm-grey-two;
+          @include text-hover-out;
+
+          &:hover{
+            @include text-hover-in;
+          }
         }
       }
     }

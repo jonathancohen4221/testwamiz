@@ -1,3 +1,5 @@
+@import "colors.scss";
+
 @mixin centerer {
   position: absolute;
   top: 50%;
@@ -46,7 +48,23 @@
   vertical-align: middle;
 }
 
+@mixin text-hover-in{
+  color: $c-light-blue-grey;
+  transition: color .1s ease-in-out;
+}
 
+@mixin text-hover-out{
+  transition: color .1s ease-in-out;
+}
+
+@mixin bg-hover-in{
+  background-color: $c-light-blue-grey;
+  transition: background-color .3s ease-in-out;
+}
+
+@mixin bg-hover-out{
+  transition: background-color .3s ease-in-out;
+}
 $w-desktop: "(min-width: 1330px)";
 $w-end-desktop: "(max-width: 1330px)";
 $w-responsive: "(max-width: 1080px)";
