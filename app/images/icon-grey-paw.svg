@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 16">
+    <defs>
+        <style>.paw-pet2{fill:#dbdbdb;}</style>
+    </defs>
+    <title>grey-paw</title>
+    <g data-name="Calque 2">
+        <g data-name="Calque 1">
+            <path class="paw-pet2" d="M12,4a2,2,0,1,0-2-2A2,2,0,0,0,12,4ZM4,6A2,2,0,1,0,2,8,2,2,0,0,0,4,6ZM16,4a2,2,0,1,0,2,2A2,2,0,0,0,16,4ZM6,4A2,2,0,1,0,4,2,2,2,0,0,0,6,4Zm6.93,4.27a4,4,0,0,0-7.86,0,4,4,0,0,0,2.81,7.48A4.49,4.49,0,0,0,9,15.1a4,4,0,1,0,3.93-6.83Z"/>
+        </g>
+    </g>
+</svg>

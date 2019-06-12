@@ -41,7 +41,7 @@ for (let i = 0; i < accordionHeadline.length; i++) {
 
 /* ASIDE ANCHORS AND ACCORDION */
 
-for (let i = 1; i < 5; i++) {
+for (let i = 1; i < 6; i++) {
     document.getElementById('menu-'+i).addEventListener('click', function() {
         document.getElementById('spec'+i).classList.remove('hide');
     });
@@ -55,55 +55,60 @@ function switchMenu(x) {
 
 /* STICKY ADVERTISE */
 
-let Sticky = (function() {
-    'use strict';
+const mq = window.matchMedia( '(min-width: 1330px)' );
+if (mq.matches) {
 
-    let CSS_CLASS_ACTIVE = 'is-fixed';
+    let Sticky = (function() {
+        'use strict';
 
-    let Sticky = {
-        element: null,
-        position: 0,
-        addEvents: function() {
-            window.addEventListener('scroll', this.onScroll.bind(this));
-        },
-        init: function(element) {
-            this.element = element;
-            this.addEvents();
-            this.position = element.offsetTop ;
-            this.onScroll();
-        },
-        aboveScroll: function() {
-            return this.position < window.scrollY;
-        },
-        onScroll: function(event) {
-            if (this.aboveScroll()) {
-                this.setFixed();
-            } else {
-                this.setStatic();
+        let CSS_CLASS_ACTIVE = 'is-fixed';
+
+        let Sticky = {
+            element: null,
+            position: 0,
+            addEvents: function() {
+                window.addEventListener('scroll', this.onScroll.bind(this));
+            },
+            init: function(element) {
+                this.element = element;
+                this.addEvents();
+                this.position = element.offsetTop ;
+                this.onScroll();
+            },
+            aboveScroll: function() {
+                return this.position < window.scrollY;
+            },
+            onScroll: function(event) {
+                if (this.aboveScroll()) {
+                    this.setFixed();
+                } else {
+                    this.setStatic();
+                }
+            },
+            setFixed: function() {
+                this.element.classList.add(CSS_CLASS_ACTIVE);
+                this.element.style.position = 'fixed';
+                this.element.style.top = '40px';
+                this.element.style.right = 0;
+            },
+            setStatic: function() {
+                this.element.classList.remove(CSS_CLASS_ACTIVE);
+                this.element.style.position = 'relative';
+                this.element.style.top = '203px';
             }
-        },
-        setFixed: function() {
-            this.element.classList.add(CSS_CLASS_ACTIVE);
-            this.element.style.position = 'fixed';
-            this.element.style.top = '40px';
-            this.element.style.right = 0;
-        },
-        setStatic: function() {
-            this.element.classList.remove(CSS_CLASS_ACTIVE);
-            this.element.style.position = 'relative';
-            this.element.style.top = '203px';
-        }
-    };
+        };
 
-    return Sticky;
+        return Sticky;
 
-})();
+    })();
 
 
 //  Init Sticky
-let sticky = document.querySelector('.advertise');
-if (sticky)
-    Sticky.init(sticky);
+    let sticky = document.querySelector('.advertise');
+    if (sticky)
+        Sticky.init(sticky);
+}
+
 
 /* FORM */
 
