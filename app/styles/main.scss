@@ -12,33 +12,59 @@ body{
 #container{
   overflow: hidden;
 
-  #hastags{
-    @include dimensions(100%,30px);
-    background-color: $c-white;
-    font-size: 12px;
-    text-align: center;
-    line-height: 28px;
+  #settings{
+    background-color: $c-pink;
+    @include dimensions(50px,50px);
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
 
-    p, li{
-      letter-spacing: 1.2px;
-      color: $c-slate-grey-two;
+    div{
+      position: relative;
+      @include dimensions(100%,100%);
     }
-    p, ul{
-      display: inline-block;
-      vertical-align: middle;
+    img{
+      @include centerer;
     }
-
-    p{
-      font-family: "Nunito-Light";
-
+    @media #{$w-desktop} {
+      display: none;
     }
-    li{
-      font-family: "Poppins-Medium";
-      display: inline-block;
-      vertical-align: middle;
+  }
 
-      &:not(:last-child){
-        margin-right: 10px;
+  #hastags {
+    display: none;
+
+    @media #{$w-desktop} {
+      display: block;
+      @include dimensions(100%, 30px);
+      background-color: $c-white;
+      font-size: 12px;
+      text-align: center;
+      line-height: 28px;
+
+      p, li {
+        letter-spacing: 1.2px;
+        color: $c-slate-grey-two;
+      }
+      p, ul {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      p {
+        font-family: "Nunito-Light";
+
+      }
+      li {
+        font-family: "Poppins-Medium";
+        display: inline-block;
+        vertical-align: middle;
+
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
       }
     }
   }
@@ -53,7 +79,11 @@ body{
       float: right;
 
       .socials{
-        @include middle-ib;
+        display: none;
+        
+        @media #{$w-desktop} {
+          @include middle-ib;
+        }
       }
 
       li{
@@ -117,6 +147,26 @@ body{
     position: relative;
     float: left;
 
+    @media #{$w-responsive} {
+      display: none;
+    }
+
+    &.visible{
+      display: block;
+      @include dimensions(100vw,100vh);
+      position: fixed;
+      z-index: 3;
+      top: 0;
+
+      div{
+        position: relative;
+        @include dimensions(100%,100%);
+      }
+      img{
+        @include centerer;
+      }
+    }
+
     li{
       position: relative;
 
@@ -161,16 +211,36 @@ body{
       text-align: center;
       @include absolute-bottom-left(21px,50%);
       margin-left: -137px;
+    }
 
+    #close{
+      display: none;
+      background-color: $c-pink;
+      @include dimensions(50px,50px);
+      border-radius: 50%;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 2;
+      
+      &.visible{
+        display: block;
+      }
     }
   }
 
   main{
-    float:left;
+    float: left;
     text-align: center;
-    width: calc(100% - 664px);
+    width: calc(100% - 300px);
     padding-top: 39px;
 
+    @media #{$w-desktop} {
+      width: calc(100% - 664px);
+    }
+    @media #{$w-responsive} {
+      width: 100%;
+    }
     #breadcrumb{
       font-family: Nunito-Light;
       font-size: 13px;
@@ -221,8 +291,13 @@ body{
     }
 
     .id{
-      width: 650px;
       margin: auto;
+      width: 100%;
+
+      @media #{$w-desktop} {
+        width: 650px;
+
+      }
     }
 
     figure{
@@ -268,6 +343,14 @@ body{
           }
         }
       }
+
+      @media #{$w-mobile} {
+        img{
+          width: 100%;
+        }
+      }
+
+
     }
 
     figcaption{
@@ -277,6 +360,10 @@ body{
       margin-top: 10px;
       text-align: left;
 
+      @media #{$w-end-desktop} {
+        line-height: 17px;
+        padding: 0 15px;
+      }
       span:first-of-type{
         font-family: Nunito-SemiBold;
         font-weight: 600;
@@ -294,17 +381,32 @@ body{
     font-size: 20px;
     line-height: 30px;
     text-align: left;
+
+    @media #{$w-responsive} {
+      padding: 0 15px;
+    }
   }
 
   #dna{
-    width: 650px;
-    height: 320px;
+    height: auto;
+    padding: 50px 35px;
+    width: calc(100% - 30px);
     border: 1px dashed $c-warm-grey-two ;
-    padding: 0 24%;
     box-sizing: border-box;
-    padding-top: 50px;
-    margin-top: 60px;
     position: relative;
+    margin: 60px 0;
+
+    @media #{$w-desktop} {
+      width: 650px;
+      height: 320px;
+      padding: 50px 24% 0;
+      margin: 60px 0;
+    }
+
+    @media #{$w-responsive} {
+      margin: 60px 15px;
+    }
+
 
     #dna-picto{
       position: absolute;
@@ -342,16 +444,22 @@ body{
     margin-top: 10px;
     text-align: left;
 
+    @media #{$w-mobile} {
+      margin: 0 15px;
+    }
+
     & > div{
       background-color: $c-white-two;
       padding: 20px 41px 20px;
+
+      @media #{$w-mobile} {
+        padding: 20px 15px;
+      }
 
       &:not(:last-child){
         margin-bottom: 10px;
       }
     }
-
-
 
     h2{
       font-family: "Poppins-Bold";
@@ -371,6 +479,15 @@ body{
         text-align: center;
         cursor: pointer;
         line-height: 30px;
+
+        @media #{$w-mobile} {
+          right: 0;
+        }
+      }
+
+      span{
+        width: 80%;
+        display: block;
       }
     }
 
@@ -379,6 +496,7 @@ body{
       color: $c-greyish-brown;
       line-height: 26px;
       margin-bottom: 5px;
+      overflow: hidden;
 
       &:first-of-type{
         padding-top: 35px;
@@ -387,11 +505,19 @@ body{
       &:after{
         content:"";
       }
+
+      p{
+        float: left;
+      }
+      .img{
+        float:right;
+      }
     }
 
     dd{
       margin-bottom: 30px;
       color: $c-warm-grey-two;
+      line-height: 25px;
     }
 
     .table-spec {
@@ -413,6 +539,16 @@ body{
     .hide {
       display: none;
     }
+
+    #spec5{
+      ul{
+        padding-left: 20px;
+      }
+      li{
+        list-style: disc;
+        text-decoration: underline;
+      }
+    }
   }
 
 
@@ -421,6 +557,22 @@ body{
 
     hr, ul{
       width: calc((100% - 14px) / 3);
+    }
+
+    @media #{$w-responsive} {
+      hr {
+        width: 20%;
+      }
+    }
+
+    @media #{$w-mobile} {
+      hr{
+        width: 50px;
+      }
+
+      ul{
+        width: calc(100% - 110px);
+      }
     }
     ul, li, hr{
       @include middle-ib;
@@ -461,13 +613,17 @@ body{
       background-color: $c-warm-grey-three;
     }
   }
+  .advertise {
+    display: none;
 
-  .advertise{
-    float: right;
-    @include dimensions(300px,600px);
-    position: relative;
-    top: 203px;
-    margin-right: 38px;
+    @media #{$w-desktop} {
+      display: block;
+      float: right;
+      @include dimensions(300px, 600px);
+      position: relative;
+      top: 203px;
+      margin-right: 38px;
+    }
   }
 }
 
@@ -527,6 +683,7 @@ body{
     font-size: 14px;
     letter-spacing: 1.4px;
   }
+
   #newsletter-inputs{
     display: none;
 
@@ -556,7 +713,7 @@ body{
     margin: auto auto 17.3px;
   }
 
-  p:first-of-type{
+  .newsletter-txt{
     margin-top: 12px;
     font-family: "Poppins-Bold";
     font-size: 16px;
@@ -565,7 +722,7 @@ body{
     color: $c-white-five;
   }
 
-  p:last-of-type{
+  .newsletter-optin{
     font-family: "Nunito-Bold";
     color: $c-white-five;
     font-size: 13px;
@@ -592,27 +749,49 @@ body{
     margin-top: 38.3px;
     border: none;
   }
+
+  @media #{$w-mobile} {
+    padding: 15px;
+
+    .newsletter-txt {
+      line-height: 20px;
+    }
+  }
+
 }
 
 footer{
   background-color: $c-white-two;
+  padding-bottom: 20px;
 
   nav{
     padding-top: 40px;
+
     ul{
       text-align: center;
       font-family: "Poppins-Regular";
     }
+
     ul:first-child{
       li{
         @include middle-ib;
+
         &:not(:last-child) {
           margin-right: 30px;
         }
+
         a{
           letter-spacing: 1.6px;
           text-align: center;
           color: $c-warm-grey-two;
+        }
+        @media #{$w-mobile} {
+          display: block;
+          margin: 30px auto;
+
+          &:not(:last-child) {
+            margin-right: auto;
+          }
         }
       }
       & + ul{

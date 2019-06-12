@@ -45,3 +45,9 @@
   display: inline-block;
   vertical-align: middle;
 }
+
+
+$w-desktop: "(min-width: 1330px)";
+$w-end-desktop: "(max-width: 1330px)";
+$w-responsive: "(max-width: 1080px)";
+$w-mobile: "(max-width: 730px)";

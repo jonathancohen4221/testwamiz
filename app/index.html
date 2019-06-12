@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="description" content="">
@@ -16,6 +16,11 @@
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 <div id="container">
+  <div id="settings">
+    <div>
+      <img src="images/icon-equalizer.svg" alt="acces menu" width="25">
+    </div>
+  </div>
   <nav id="hastags">
     <p>ACTUALITÉS : </p>
     <ul>
@@ -54,8 +59,8 @@
       </div>
     </div>
   </header>
-  <aside>
-    <ul>
+  <aside id="left-menu">
+    <ul id="left-menu-list">
       <li><a href="#dna-title"><span>Informations principales</span></a></li>
       <li id="menu-1"><a href="#spec1"><span>Caractéristiques physiques
         ou critère plus long</span></a></li>
@@ -65,6 +70,11 @@
       <li id="menu-5"><a href="#spec5"><span>Santé</span></a></li>
     </ul>
     <a class="btn">VOIR TOUTES LES RACES</a>
+    <a href="#" id="close">
+      <div>
+        <img src="images/icon-cross.svg" alt="fermeture menu" width="25">
+      </div>
+    </a>
   </aside>
   <main>
     <div class="id">
@@ -105,7 +115,9 @@
       </section>
       <section id="specifications">
         <div>
-          <h2>Caractéristiques physiques du Beagle</h2>
+          <h2>
+            <span>Caractéristiques physiques du Beagle</span>
+          </h2>
           <div id="spec1" class="hide">
             <dl>
               <dt>Taille adulte du Beagle</dt>
@@ -154,34 +166,129 @@
           </div>
         </div>
         <div>
-          <h2>Caractère du Beagle</h2>
+          <h2>
+            <span>Caractère du Beagle</span>
+          </h2>
           <div id="spec2" class="hide">
             <dl>
-              <dt class="stars-three">Affectueux :</dt>
+              <dt class="stars-three">
+                <p>Affectueux :</p>
+                <div class="img">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                </div>
+              </dt>
               <dd>Ce chien est un animal affectueux envers son groupe social, d’un tempérament assez aimable et jovial.</dd>
-              <dt class="stars-three">Joueur : </dt>
+              <dt class="stars-three">
+                <p>Joueur :</p>
+                <div class="img">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                </div>
+              </dt>
               <dd>Le Beagle est un chien très éveillé, qui a besoin de se dépenser et libérer toute son énergie au quotidien, ce qui fait de lui un parfait compagnon de jeu.</dd>
-              <dt class="stars-one">Calme :</dt>
+              <dt class="stars-one">
+                <p>Calme :</p>
+                <div class="img">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                  <img src="images/icon-grey-paw.svg" alt="pictogramme pattes" width="15">
+                  <img src="images/icon-grey-paw.svg" alt="pictogramme pattes" width="15">
+                </div>
+              </dt>
               <dd>Le Beagle n’est pas un chien calme, il a toujours besoin d’être stimulé, tant physiquement que mentalement.</dd>
-              <dt class="stars-three">Intelligent :</dt>
+              <dt class="stars-three">
+                <p>Intelligent :</p>
+                <div class="img">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                </div>
+              </dt>
               <dd>Comme tout bon chien de travail, le Beagle est un animal très intelligent, qui saura d’ailleurs utiliser ses aptitudes tant dans la coopération que dans les bêtises.</dd>
-              <dt class="stars-three">Chasseur :</dt>
+              <dt class="stars-three">
+                <p>Chasseur :</p>
+                <div class="img">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                </div>
+              </dt>
               <dd>Chien de chasse par excellence, le Beagle possède un instinct de chasse très développé, parfois même difficile à canaliser.</dd>
-              <dt class="stars-one">Craintif, méfiant avec les inconnus :</dt>
+              <dt class="stars-one">
+                <p>Craintif, méfiant avec les inconnus :</p>
+                <div class="img">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                  <img src="images/icon-grey-paw.svg" alt="pictogramme pattes" width="15">
+                  <img src="images/icon-grey-paw.svg" alt="pictogramme pattes" width="15">
+                </div>
+              </dt>
               <dd>Chien sociable et en demande de contacts, le Beagle ne se montrera ni craintif ni agressif envers les inconnus.</dd>
-              <dt class="stars-three">Indépendant :</dt>
+              <dt class="stars-three">
+                <p>Indépendant :</p>
+                <div class="img">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                  <img src="images/icon-yellow-paw.svg" alt="pictogramme pattes" width="15">
+                </div>
+              </dt>
               <dd>Malgré un certain attachement à son groupe social, le Beagle étant un chien de chasse, il pourra se montrer très indépendant s’il souhaite suivre une piste. Les fugues sont d’ailleurs souvent le principal problème rencontré avec cette race.</dd>
             </dl>
           </div>
         </div>
-        <div id="spec3">
-          <h2>Toilettage et entretien du Beagle</h2>
+        <div>
+          <h2>
+            <span>Toilettage et entretien du Beagle</span></h2>
+          <div id="spec3" class="hide">
+            <dl>
+              <dt></dt>
+              <dd>
+                Son poil étant ras, l’entretien sera simple et rapide mais devra néanmoins être régulier puisque le Beagle perd ses poils de manière modérée, certes, mais continue. Ses oreilles et ses yeux devront être surveillés et nettoyés régulièrement.
+
+                Perte de poils
+                Continue et modérée
+              </dd>
+              <dt>Perte de poils</dt>
+              <dd>Continue et modérée</dd>
+            </dl>
+          </div>
         </div>
-        <div id="spec4">
-          <h2>Alimentation du Beagle</h2>
+        <div>
+          <h2>
+            <span>Alimentation du Beagle</span></h2>
+          <div id="spec4" class="hide">
+            <dl>
+              <dt></dt>
+              <dd>
+                Le Beagle est un chien très gourmand et prédisposé à l’embonpoint, il faudra donc veiller à lui proposée une alimentation équilibrée et de bonne qualité, que ce soit une nourriture sèche, humide ou crue. De même pour les friandises données pour son éducation, elles devront être de bonne qualité et ne pas être données de manière systématique. On veillera bien entendu à proposer au Beagle chiot des apports nutritionnels spécifiques et adaptés pour garantir sa croissance et son bon développement.
+              </dd>
+            </dl>
+          </div>
         </div>
-        <div id="spec5">
-          <h2>Santé du Beagle</h2>
+        <div>
+          <h2>
+            <span>Santé du Beagle</span>
+          </h2>
+          <div id="spec5" class="hide">
+            <dl>
+              <dt>Maladies fréquentes :</dt>
+              <dd>
+                <ul>
+                  <li>Dysplasie de la hanche</li>
+                  <li>Troubles épileptiques</li>
+                  <li>Allergies</li>
+                  <li>Hernie discale</li>
+                  <li>Otites</li>
+                  <li>Hyperthyroïdie</li>
+                  <li>Sténose pulmonaire (malformation
+                    cardiaque)</li>
+                  <li>Beagle Pain Syndrome (maladie
+                    chronique tout de même rare)</li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
         </div>
       </section>
       <section id="socials">
@@ -227,8 +334,8 @@
 </section>
 <section id="newsletter">
   <img src="images/icon-newsletter.svg" alt="pictogramme newsletter" width="59">
-  <p>
-    Recevez les conseils et actualités au poil de Wamiz chaque jour !
+  <p class="newsletter-txt">
+    Recevez les conseils et actualités au poil de Wamiz chaque jour&nbsp;!
   </p>
   <form>
     <input type="checkbox" id="dogsCheck" class="newsletterCheckbox" name="dogs" />
@@ -246,11 +353,12 @@
       <input type="email" id="mail" name="user_mail" placeholder="adresse email" required />
 
       <button type="submit">VALIDER</button>
+      <p class="newsletter-optin">
+        En cliquant sur « VALIDER », je reconnais avoir pris connaissance de la <a href="#">Politique de confidentialité de Wamiz</a> et des droits dont je dispose sur mes données personnelles.
+      </p>
     </div>
   </form>
-  <p>
-    En cliquant sur « VALIDER », je reconnais avoir pris connaissance de la <a href="#">Politique de confidentialité de Wamiz</a> et des droits dont je dispose sur mes données personnelles.
-  </p>
+
 </section>
 <footer>
   <nav>
