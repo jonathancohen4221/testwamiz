@@ -70,14 +70,19 @@ body{
         cursor:pointer;
         text-align: center;
         @include absolute-top-right(0,0);
+        pointer-events: none;
       }
       a{
         color: $c-warm-grey-two;
         font-family: Poppins-Bold;
         line-height: 23px;
         text-align: left;
-        max-width: 90%;
         display: block;
+
+        span{
+          max-width: 90%;
+          display: block;
+        }
       }
     }
     .btn{
