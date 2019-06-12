@@ -38,3 +38,65 @@ function accordionToggle (e) {
 for (var i = 0; i < accordionHeadline.length; i++) {
     accordionHeadline[i].addEventListener('click', accordionToggle);
 }
+
+
+/* MENU */
+
+function switchMenu(x) {
+    x.classList.toggle('change');
+}
+
+/* STICKY ADVERTISE */
+
+// Sticky Nav Component
+let Sticky = (function() {
+    'use strict';
+
+    let CSS_CLASS_ACTIVE = 'is-fixed';
+
+    let Sticky = {
+        element: null,
+        position: 0,
+        addEvents: function() {
+            window.addEventListener('scroll', this.onScroll.bind(this));
+        },
+        init: function(element) {
+            this.element = element;
+            this.addEvents();
+            this.position = element.offsetTop ;
+            this.onScroll();
+        },
+        aboveScroll: function() {
+            return this.position < window.scrollY;
+        },
+        onScroll: function(event) {
+            if (this.aboveScroll()) {
+                this.setFixed();
+            } else {
+                this.setStatic();
+            }
+        },
+        setFixed: function() {
+            this.element.classList.add(CSS_CLASS_ACTIVE);
+            // not needed if added with CSS Class
+            this.element.style.position = 'fixed';
+            this.element.style.top = '40px';
+            this.element.style.right = 0;
+        },
+        setStatic: function() {
+            this.element.classList.remove(CSS_CLASS_ACTIVE);
+            // not needed if added with CSS Class
+            this.element.style.position = 'relative';
+            this.element.style.top = '203px';
+        }
+    };
+
+    return Sticky;
+
+})();
+
+
+//  Init Sticky
+let sticky = document.querySelector('.advertise');
+if (sticky)
+    Sticky.init(sticky);

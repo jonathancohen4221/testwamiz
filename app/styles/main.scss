@@ -396,7 +396,8 @@ body{
   .advertise{
     float: right;
     @include dimensions(300px,600px);
-    margin-top: 39px;
+    position: relative;
+    top: 203px;
     margin-right: 38px;
   }
 }
