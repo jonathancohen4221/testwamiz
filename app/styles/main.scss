@@ -457,10 +457,18 @@ body{
   form{
     margin-top: 19px;
   }
+
   label{
     color: $c-warm-grey-two;
     font-size: 14px;
     letter-spacing: 1.4px;
+  }
+  #newsletter-inputs{
+    display: none;
+
+    &.visible{
+      display: block;
+    }
   }
 
   input[type="text"], input[type="email"]{
@@ -472,6 +480,8 @@ body{
     letter-spacing: 1.4px;
     font-family: "Poppins-Regular";
     padding: 11.9px 22.5px;
+    display: block;
+    margin: auto;
 
     &::placeholder{
       color: $c-pinkish-grey;
@@ -479,7 +489,7 @@ body{
   }
 
   input[type="text"]{
-    margin-bottom: 17.3px;
+    margin: auto auto 17.3px;
   }
 
   p:first-of-type{
