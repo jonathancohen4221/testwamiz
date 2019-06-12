@@ -1,4 +1,30 @@
-/* FUNCTION FOR FLIP MAIN SPECIE IMAGE*/
+/* ---------------LEFT MENU ON MOBILE---------------*/
+
+let mobileMenu = document.getElementById('settings');
+let asideTag = document.getElementById('left-menu');
+let close = document.getElementById('close');
+
+mobileMenu.addEventListener('click', function() {
+    asideTag.classList.add('visible');
+    close.classList.add('visible');
+});
+
+close.addEventListener('click', function() {
+    asideTag.classList.remove('visible');
+    close.classList.remove('visible');
+});
+
+
+
+var ul = document.getElementById('left-menu-list');  // Parent
+
+ul.addEventListener('click', function(e) {
+    asideTag.classList.remove('visible');
+    close.classList.remove('visible');
+});
+
+
+/* ---------------FUNCTION FOR FLIP MAIN SPECIE IMAGE---------------*/
 
 function change() {
     let img1 = 'http://localhost:9000/images/beagle.jpg',
@@ -20,7 +46,7 @@ mainImg.addEventListener('click', function() {
 });
 
 
-/* ACCORDION */
+/* ---------------ACCORDION--------------- */
 
 let accordionWrapperNode = document.getElementById('specifications');
 let accordionHeadline = accordionWrapperNode.getElementsByTagName('h2');
@@ -39,7 +65,7 @@ for (let i = 0; i < accordionHeadline.length; i++) {
     accordionHeadline[i].addEventListener('click', accordionToggle);
 }
 
-/* ASIDE ANCHORS AND ACCORDION */
+/* ---------------ASIDE ANCHORS AND ACCORDION--------------- */
 
 for (let i = 1; i < 6; i++) {
     document.getElementById('menu-'+i).addEventListener('click', function() {
@@ -47,13 +73,13 @@ for (let i = 1; i < 6; i++) {
     });
 }
 
-/* MENU */
+/* ---------------MENU--------------- */
 
 function switchMenu(x) {
     x.classList.toggle('change');
 }
 
-/* STICKY ADVERTISE */
+/* ---------------STICKY ADVERTISE--------------- */
 
 const mq = window.matchMedia( '(min-width: 1330px)' );
 if (mq.matches) {
@@ -110,7 +136,7 @@ if (mq.matches) {
 }
 
 
-/* FORM */
+/* ---------------FORM--------------- */
 
 function showForm() {
     let checkBoxes = document.getElementsByClassName( 'newsletterCheckbox' );
