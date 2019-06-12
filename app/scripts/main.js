@@ -47,6 +47,7 @@ for (let i = 1; i < 5; i++) {
     });
 }
 
+
 /* MENU */
 
 function switchMenu(x) {
@@ -129,3 +130,4 @@ let numCheckboxes= checkboxes.length;
 for (let i = 0; i < numCheckboxes; i++) {
     checkboxes[i].addEventListener('click', showForm, false);
 }
+
