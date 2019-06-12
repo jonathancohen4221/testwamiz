@@ -22,12 +22,12 @@ mainImg.addEventListener('click', function() {
 
 /* ACCORDION */
 
-var accordionWrapperNode = document.getElementById('specifications');
-var accordionHeadline = accordionWrapperNode.getElementsByTagName('h2');
+let accordionWrapperNode = document.getElementById('specifications');
+let accordionHeadline = accordionWrapperNode.getElementsByTagName('h2');
 
 function accordionToggle (e) {
     e.preventDefault();
-    var accordionContent = this.nextSibling.nextSibling;
+    let accordionContent = this.nextSibling.nextSibling;
     if (accordionContent.classList.contains('hide')) {
         accordionContent.className = '';
     } else {
@@ -35,10 +35,17 @@ function accordionToggle (e) {
     }
 }
 
-for (var i = 0; i < accordionHeadline.length; i++) {
+for (let i = 0; i < accordionHeadline.length; i++) {
     accordionHeadline[i].addEventListener('click', accordionToggle);
 }
 
+/* ASIDE ANCHORS AND ACCORDION */
+
+for (let i = 1; i < 3; i++) {
+    document.getElementById('menu-'+i).addEventListener('click', function() {
+        document.getElementById('spec'+i).classList.remove('hide');
+    });
+}
 
 /* MENU */
 
@@ -48,7 +55,6 @@ function switchMenu(x) {
 
 /* STICKY ADVERTISE */
 
-// Sticky Nav Component
 let Sticky = (function() {
     'use strict';
 
