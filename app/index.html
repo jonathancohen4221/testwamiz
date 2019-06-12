@@ -217,23 +217,20 @@
     Recevez les conseils et actualités au poil de Wamiz chaque jour !
   </p>
   <form>
-      <input type="checkbox" id="dogsCheck" name="dogs" />
-      <label for="dogsCheck">Chiens</label>
-      <input type="checkbox" id="catsCheck" name="cats" />
-      <label for="catsCheck">Chats</label>
-    <div>
-<!--
-      <label for="fistname">Prénom</label>
--->
+    <input type="checkbox" id="dogsCheck" class="newsletterCheckbox" name="dogs" />
+    <label for="dogsCheck">Chiens</label>
+    <input type="checkbox" id="catsCheck" class="newsletterCheckbox" name="cats" />
+    <label for="catsCheck">Chats</label>
+    <div id="newsletter-inputs">
+      <!--
+            <label for="fistname">Prénom</label>
+      -->
       <input type="text" id="fistname" name="user_firstname" placeholder="Prénom" required />
-    </div>
-    <div>
-<!--
-      <label for="mail">adresse email :</label>
--->
+      <!--
+            <label for="mail">adresse email :</label>
+      -->
       <input type="email" id="mail" name="user_mail" placeholder="adresse email" required />
-    </div>
-    <div>
+
       <button type="submit">VALIDER</button>
     </div>
   </form>

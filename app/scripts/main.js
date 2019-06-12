@@ -41,7 +41,7 @@ for (let i = 0; i < accordionHeadline.length; i++) {
 
 /* ASIDE ANCHORS AND ACCORDION */
 
-for (let i = 1; i < 3; i++) {
+for (let i = 1; i < 5; i++) {
     document.getElementById('menu-'+i).addEventListener('click', function() {
         document.getElementById('spec'+i).classList.remove('hide');
     });
@@ -106,3 +106,28 @@ let Sticky = (function() {
 let sticky = document.querySelector('.advertise');
 if (sticky)
     Sticky.init(sticky);
+
+/* FORM */
+
+function showForm() {
+    let checkBoxes = document.getElementsByClassName( 'newsletterCheckbox' );
+    let inputs = document.getElementById('newsletter-inputs');
+    let isChecked = false;
+    for (let i = 0; i < checkBoxes.length; i++) {
+        if ( checkBoxes[i].checked ) {
+            isChecked = true;
+        };
+    };
+    if ( isChecked ) {
+        inputs.classList.add('visible');
+    } else {
+        inputs.classList.remove('visible');
+    }
+}
+
+let checkboxes = document.getElementsByClassName( 'newsletterCheckbox' );
+let numCheckboxes= checkboxes.length;
+
+for (let i = 0; i < numCheckboxes; i++) {
+    checkboxes[i].addEventListener('click', showForm, false);
+}
