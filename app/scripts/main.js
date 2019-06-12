@@ -84,14 +84,12 @@ let Sticky = (function() {
         },
         setFixed: function() {
             this.element.classList.add(CSS_CLASS_ACTIVE);
-            // not needed if added with CSS Class
             this.element.style.position = 'fixed';
             this.element.style.top = '40px';
             this.element.style.right = 0;
         },
         setStatic: function() {
             this.element.classList.remove(CSS_CLASS_ACTIVE);
-            // not needed if added with CSS Class
             this.element.style.position = 'relative';
             this.element.style.top = '203px';
         }
