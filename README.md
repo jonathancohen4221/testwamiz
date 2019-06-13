@@ -10,3 +10,4 @@ Le projet a été installé avec **[Yeoman](https://yeoman.io/)**, un outil qui 
      - **Si SASS ne s'est pas installé sur la machine**: `npm install -g sass`.
  - **Lancer le projet en local avec la commande** : `gulp serve`.
  - **Se mettre sur la branche integration**: `git checkout integration`.
+ - **Pour mettre en production** : lancer la commande `gulp build` qui va minifier les fichiers javascript et css et compresser les images.
