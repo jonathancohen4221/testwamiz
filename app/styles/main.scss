@@ -80,7 +80,7 @@ body{
 
       .socials{
         display: none;
-        
+
         @media #{$w-desktop} {
           @include middle-ib;
         }
@@ -92,6 +92,7 @@ body{
         background-color: $c-warm-grey-three;
         border-radius: 50%;
         position: relative;
+        @include bg-hover-out;
 
         a{
           @include dimensions(100%,100%);
@@ -106,6 +107,10 @@ body{
         &:not(:last-child) {
           margin-right: 7px;
         }
+
+        &:hover{
+          @include bg-hover-in;
+        }
       }
     }
 
@@ -115,8 +120,7 @@ body{
     }
 
     .bar1, .bar2, .bar3 {
-      width: 17.2px;
-      height: 2.3px;
+      @include dimensions(17.2px,2.3px);
       background-color: $c-slate-grey-two;
       margin: 6px 0;
       transition: 0.4s;
@@ -186,16 +190,22 @@ body{
         @include absolute-top-right(0,0);
         pointer-events: none;
       }
+
       a{
         color: $c-warm-grey-two;
         font-family: Poppins-Bold;
         line-height: 23px;
         text-align: left;
         display: block;
+        @include text-hover-out;
 
         span{
           max-width: 90%;
           display: block;
+        }
+
+        &:hover{
+          @include text-hover-in;
         }
       }
     }
@@ -211,6 +221,11 @@ body{
       text-align: center;
       @include absolute-bottom-left(21px,50%);
       margin-left: -137px;
+      @include btn-hover-out;
+
+      &:hover{
+        @include btn-hover-in;
+      }
     }
 
     #close{
@@ -222,7 +237,7 @@ body{
       bottom: 20px;
       right: 20px;
       z-index: 2;
-      
+
       &.visible{
         display: block;
       }
@@ -305,6 +320,7 @@ body{
 
       #flip{
         float: right;
+        width: 42px;
 
         p{
           font-size: 14px;
@@ -314,14 +330,14 @@ body{
         }
 
         span{
-          width: 39px;
-          height: 39px;
+          @include dimensions(39px,39px);
           background-color: $c-light-blue-grey;
           border-radius: 50%;
           display: block;
           position: relative;
           border: 1px solid transparent;
           cursor: pointer;
+          transition: background-color .3s ease-in-out;
 
           &:before{
             content:"";
@@ -336,6 +352,7 @@ body{
           &:hover{
             background-color: $c-white-five;
             border: 1px solid $c-light-blue-grey;
+            transition: background-color .3s ease-in-out;
 
             &:before {
               background-color: $c-light-blue-grey;
@@ -397,8 +414,7 @@ body{
     margin: 60px 0;
 
     @media #{$w-desktop} {
-      width: 650px;
-      height: 320px;
+      @include dimensions(650px,320px);
       padding: 50px 24% 0;
       margin: 60px 0;
     }
@@ -521,8 +537,7 @@ body{
     }
 
     .table-spec {
-      width:260px;
-      height:92px;
+      @include dimensions(260px,92px);
       border:1px dashed $c-warm-grey-two;
       border-collapse:collapse;
       padding:5px;
@@ -599,6 +614,7 @@ body{
           @include dimensions(20px,20px);
         }
       }
+
     }
     .fb{
       background-color: $c-denim-blue;
@@ -652,6 +668,7 @@ body{
     background-color: $c-warm-grey;
     border-radius: 50%;
     position: relative;
+    @include bg-hover-out;
 
     a{
       @include dimensions(100%,100%);
@@ -665,6 +682,10 @@ body{
 
     &:not(:last-child) {
       margin-right: 7px;
+    }
+
+    &:hover{
+      @include bg-hover-in;
     }
   }
 }
@@ -738,8 +759,7 @@ body{
   }
 
   button{
-    width: 114.2px;
-    height: 43.7px;
+    @include dimensions(114.2px,43.7px);
     background-color: $c-slate-grey-two;
     color: $c-white-five;
     font-family: "Poppins-Regular";
@@ -784,7 +804,13 @@ footer{
           letter-spacing: 1.6px;
           text-align: center;
           color: $c-warm-grey-two;
+          @include text-hover-out;
+
+          &:hover {
+            @include text-hover-in;
+          }
         }
+
         @media #{$w-mobile} {
           display: block;
           margin: 30px auto;
@@ -801,6 +827,11 @@ footer{
           a{
             font-size: 14px;
             color: $c-warm-grey;
+            @include text-hover-out;
+
+            &:hover{
+              @include text-hover-in;
+            }
           }
           &:not(:last-child) {
             margin-bottom: 30px;
@@ -809,6 +840,11 @@ footer{
         li:first-of-type{
           font-size: 16px;
           color: $c-warm-grey-two;
+          @include text-hover-out;
+
+          &:hover{
+            @include text-hover-in;
+          }
         }
       }
     }
