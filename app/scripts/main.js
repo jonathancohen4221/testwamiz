@@ -3,25 +3,23 @@ document.addEventListener('DOMContentLoaded', function() {
     /* ---------------LEFT MENU ON MOBILE---------------*/
 
     let mobileMenu = document.getElementById('settings');
-    let asideTag = document.getElementById('left-menu');
+    let leftMenu = document.getElementById('left-menu');
     let close = document.getElementById('close');
 
     mobileMenu.addEventListener('click', function() {
-        asideTag.classList.add('visible');
+        leftMenu.classList.add('visible');
         close.classList.add('visible');
     });
 
     close.addEventListener('click', function() {
-        asideTag.classList.remove('visible');
+        leftMenu.classList.remove('visible');
         close.classList.remove('visible');
     });
-
-
 
     let ul = document.getElementById('left-menu-list');  // Parent
 
     ul.addEventListener('click', function(e) {
-        asideTag.classList.remove('visible');
+        leftMenu.classList.remove('visible');
         close.classList.remove('visible');
     });
 
@@ -67,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         accordionHeadline[i].addEventListener('click', accordionToggle);
     }
 
-    /* ---------------ASIDE ANCHORS AND ACCORDION--------------- */
+    /* ---------------LEFT MENU ANCHORS AND ACCORDION--------------- */
 
     for (let i = 1; i < 6; i++) {
         document.getElementById('menu-'+i).addEventListener('click', function() {
@@ -75,12 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-
-    /* ---------------MENU--------------- */
-
-    function switchMenu(x) {
-        x.classList.toggle('change');
-    }
 
     /* ---------------STICKY ADVERTISE--------------- */
 

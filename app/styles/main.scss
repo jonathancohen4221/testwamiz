@@ -25,9 +25,11 @@ body{
       position: relative;
       @include dimensions(100%,100%);
     }
+
     img{
       @include centerer;
     }
+
     @media #{$w-desktop} {
       display: none;
     }
@@ -48,9 +50,9 @@ body{
         letter-spacing: 1.2px;
         color: $c-slate-grey-two;
       }
+
       p, ul {
-        display: inline-block;
-        vertical-align: middle;
+        @include middle-ib;
       }
 
       p {
@@ -59,8 +61,7 @@ body{
       }
       li {
         font-family: "Poppins-Medium";
-        display: inline-block;
-        vertical-align: middle;
+        @include middle-ib;
 
         &:not(:last-child) {
           margin-right: 10px;
@@ -125,23 +126,11 @@ body{
       margin: 6px 0;
       transition: 0.4s;
     }
-
-    .change{
-      .bar1 {
-        -webkit-transform: rotate(-45deg) translate(-8px, 4px);
-        transform: rotate(-45deg) translate(-8px, 4px);
-      }
-      .bar2 {
-        opacity: 0;
-      }
-      .bar3 {
-        -webkit-transform: rotate(45deg) translate(-7px, -3px);
-        transform: rotate(45deg) translate(-7px, -3px);
-      }
-    }
   }
 
-  aside{
+  /*---------------SECTION left-menu---------------*/
+
+  #left-menu{
     @include dimensions(300px,672px);
     padding-top: 27px;
     background-color: $c-white-three;
@@ -166,6 +155,7 @@ body{
         position: relative;
         @include dimensions(100%,100%);
       }
+
       img{
         @include centerer;
       }
@@ -177,6 +167,7 @@ body{
       &:not(:last-child){
         margin-bottom: 26px;
       }
+
       &:after{
         content:"›";
         @include dimensions(28px,28px);
@@ -244,6 +235,8 @@ body{
     }
   }
 
+  /*---------------SECTION MAIN---------------*/
+
   main{
     float: left;
     text-align: center;
@@ -253,9 +246,11 @@ body{
     @media #{$w-desktop} {
       width: calc(100% - 664px);
     }
+
     @media #{$w-responsive} {
       width: 100%;
     }
+
     #breadcrumb{
       font-family: Nunito-Light;
       font-size: 13px;
@@ -270,6 +265,7 @@ body{
           color: $c-light-grey-blue
         }
       }
+
       a{
         color: $c-warm-grey-two;
       }
@@ -293,6 +289,7 @@ body{
         }
       }
     }
+
     h1{
       font-family: Poppins-Bold;
       font-size: 30px;
@@ -366,8 +363,6 @@ body{
           width: 100%;
         }
       }
-
-
     }
 
     figcaption{
@@ -380,8 +375,16 @@ body{
       @media #{$w-end-desktop} {
         line-height: 17px;
         padding: 0 15px;
+        text-align: center;
+        
+        p{
+          max-width: 85%;
+        }
       }
-      span:first-of-type{
+      @media #{$w-mobile} {
+        text-align: left;
+      }
+        span:first-of-type{
         font-family: Nunito-SemiBold;
         font-weight: 600;
       }
@@ -404,6 +407,8 @@ body{
     }
   }
 
+  /*---------------SECTION DNA---------------*/
+
   #dna{
     height: auto;
     padding: 50px 35px;
@@ -411,25 +416,22 @@ body{
     border: 1px dashed $c-warm-grey-two ;
     box-sizing: border-box;
     position: relative;
-    margin: 60px 0;
+    margin: 60px 0 0;
 
     @media #{$w-desktop} {
       @include dimensions(650px,320px);
       padding: 50px 24% 0;
-      margin: 60px 0;
+      margin: 60px 0 0;
     }
 
     @media #{$w-responsive} {
       margin: 60px 15px;
     }
 
-
     #dna-picto{
-      position: absolute;
-      top: -44px;
-      background: white;
+      @include absolute-top-left(-44px,50%);
+      background: $c-white-five;
       padding: 10px;
-      left: 50%;
       transform: translateX(-50%);
     }
 
@@ -438,6 +440,7 @@ body{
       color: $c-greyish-brown;
       font-size: 17px;
       line-height: 26px;
+      text-align: left;
     }
 
     ul{
@@ -451,11 +454,19 @@ body{
       line-height: 26px;
       text-align: left;
       color: $c-warm-grey-two;
+
+      &:not(:last-child){
+        margin-bottom: 3px;
+      }
+
       span{
         font-family: "Poppins-SemiBold";
       }
     }
   }
+
+  /*---------------SECTION SPECIFICATIONS---------------*/
+
   #specifications{
     margin-top: 10px;
     text-align: left;
@@ -566,7 +577,6 @@ body{
     }
   }
 
-
   #socials{
     margin: 50px auto;
 
@@ -589,12 +599,15 @@ body{
         width: calc(100% - 110px);
       }
     }
+
     ul, li, hr{
       @include middle-ib;
     }
+
     ul{
       margin: auto;
     }
+
     li{
       @include dimensions(41px,41px);
       border-radius: 50%;
@@ -614,17 +627,20 @@ body{
           @include dimensions(20px,20px);
         }
       }
-
     }
+
     .fb{
       background-color: $c-denim-blue;
     }
+
     .tw{
       background-color: $c-dark-sky-blue;
     }
+
     .pin{
       background-color: $c-lipstick;
     }
+
     .link{
       background-color: $c-warm-grey-three;
     }
@@ -642,7 +658,7 @@ body{
     }
   }
 }
-
+/*---------------SECTION FOLLOW---------------*/
 
 #follow{
   background-color: $c-white-two;
@@ -689,6 +705,7 @@ body{
     }
   }
 }
+/*---------------SECTION NEWSLETTER---------------*/
 
 #newsletter{
   background-color: $c-light-blue-grey;
@@ -777,8 +794,9 @@ body{
       line-height: 20px;
     }
   }
-
 }
+
+/*---------------SECTION FOOTER---------------*/
 
 footer{
   background-color: $c-white-two;
@@ -833,10 +851,12 @@ footer{
               @include text-hover-in;
             }
           }
+
           &:not(:last-child) {
             margin-bottom: 30px;
           }
         }
+
         li:first-of-type{
           font-size: 16px;
           color: $c-warm-grey-two;
@@ -850,7 +870,6 @@ footer{
     }
   }
 }
-
 #footer-hr{
   height: 1px;
   border:none;

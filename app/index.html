@@ -2,9 +2,14 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="">
+  <meta name="description" content="Wamiz le site des animaux de compagnie : tout sur les chiens, chats et rongeurs. Une mine d&#039;info et de conseils pour bien s&#039;occuper de son animal domestique !" />
+  <meta name="keywords" content="animaux, animal, animal de compagnie, animal domestique, animalier, chien, chat, rongeur, photos d&#039;animaux, vidéos d&#039;animaux" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WAMIZ</title>
+  <title>Animaux, chiens, chats, rongeurs : le site des animaux de compagnie - Wamiz</title>
+  <meta property="fb:app_id" content="297751570276"/>
+  <meta property="og:image" content="https://static.wamiz.fr/images/logo-fb.jpg" />
+  <meta property="og:site_name" content="Wamiz"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
@@ -67,30 +72,30 @@
         </li>
       </ul>
 
-      <div class="menu" onclick="switchMenu(this)">
+      <div class="menu">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
       </div>
     </div>
   </header>
-  <aside id="left-menu">
-    <ul id="left-menu-list">
-      <li><a href="#dna-title"><span>Informations principales</span></a></li>
-      <li id="menu-1"><a href="#spec1"><span>Caractéristiques physiques
+  <nav id="left-menu">
+      <ul id="left-menu-list">
+        <li><a href="#dna"><span>Informations principales</span></a></li>
+        <li id="menu-1"><a href="#spec1"><span>Caractéristiques physiques
         ou critère plus long</span></a></li>
-      <li id="menu-2"><a href="#spec2"><span>Caractère</span></a></li>
-      <li id="menu-3"><a href="#spec3"><span>Toilettage et entretien</span></a></li>
-      <li id="menu-4"><a href="#spec4"><span>Alimentation</span></a></li>
-      <li id="menu-5"><a href="#spec5"><span>Santé</span></a></li>
-    </ul>
-    <a class="btn">VOIR TOUTES LES RACES</a>
-    <a href="#" id="close">
-      <div>
-        <img src="images/icon-cross.svg" alt="fermeture menu" width="25">
-      </div>
-    </a>
-  </aside>
+        <li id="menu-2"><a href="#spec2"><span>Caractère</span></a></li>
+        <li id="menu-3"><a href="#spec3"><span>Toilettage et entretien</span></a></li>
+        <li id="menu-4"><a href="#spec4"><span>Alimentation</span></a></li>
+        <li id="menu-5"><a href="#spec5"><span>Santé</span></a></li>
+      </ul>
+      <a class="btn">VOIR TOUTES LES RACES</a>
+      <a href="#" id="close">
+        <div>
+          <img src="images/icon-cross.svg" alt="fermeture menu" width="25">
+        </div>
+      </a>
+  </nav>
   <main>
     <div class="id">
       <nav id="breadcrumb">
@@ -105,7 +110,10 @@
       <p class="subtitle">Autre(s) nom(s) : Singing Beagle</p>
       <figure>
         <img src="images/beagle.jpg" alt="Race Beagle" id="img">
-        <figcaption>Description de l’image <span>sur plusieurs lignes</span> the quick brown fox jumps <span>© Copyright 2018</span>
+        <figcaption>
+          <p>
+            Description de l’image <span>sur plusieurs lignes</span> the quick brown fox jumps <span>© Copyright 2018</span>
+          </p>
           <div id="flip">
             <span></span>
             <p id="txt">Chiot</p>
@@ -116,9 +124,9 @@
         Le Beagle est un chien de chasse (prédisposé à la chasse à courre, de lévriers notamment) de taille moyenne. Il est toutefois devenu un parfait chien de compagnie pour des maîtres dynamiques et surtout disponibles pouvant répondre pleinement à ses besoins importants de dépense et d’attention. Aussi intrépide qu’affectueux, le Beagle saura amadouer n’importe qui avec ses oreilles tombantes et son regard à la fois doux, triste et plein de malice.
       </p>
       <section id="dna">
-        <img src="images/dna.svg" alt="dna pictogramme" id="dna-picto" width="70">
-        <p id="dna-title">Informations principales sur le Beagle
-          ( ou nom de race plus long )</p>
+        <img src="images/dna.svg" alt="dna pictogramme" id="dna-picto" width="90">
+        <h2 class="dna-title">Informations principales sur le Beagle
+          ( ou nom de race plus long )</h2>
         <ul>
           <li>Espérance de vie : <span>12 à 14 ans</span></li>
           <li>Caractère : <span>affectueux, joueur, intelligent</span></li>
@@ -327,7 +335,7 @@
     </div>
   </main>
   <div class="advertise">
-    <img src="images/advertise.jpg" alt="advertise">
+    <img src="images/advertise.jpg" alt="publicité">
   </div>
 </div>
 <section id="follow">
@@ -358,18 +366,11 @@
     <input type="checkbox" id="catsCheck" class="newsletterCheckbox" name="cats" />
     <label for="catsCheck">Chats</label>
     <div id="newsletter-inputs">
-      <!--
-            <label for="fistname">Prénom</label>
-      -->
       <input type="text" id="fistname" name="user_firstname" placeholder="Prénom" required />
-      <!--
-            <label for="mail">adresse email :</label>
-      -->
       <input type="email" id="mail" name="user_mail" placeholder="adresse email" required />
-
       <button type="submit">VALIDER</button>
       <p class="newsletter-optin">
-        En cliquant sur « VALIDER », je reconnais avoir pris connaissance de la <a href="#">Politique de confidentialité de Wamiz</a> et des droits dont je dispose sur mes données personnelles.
+        En cliquant sur « VALIDER », je reconnais avoir pris connaissance de la <a href="https://wamiz.com/confidentialite.html" target="_blank">Politique de confidentialité de Wamiz</a> et des droits dont je dispose sur mes données personnelles.
       </p>
     </div>
   </form>
@@ -384,12 +385,12 @@
     </ul>
     <ul>
       <li>WAMIZ GROUP</li>
-      <li><a href="">ADOPTE-MOI</a></li>
-      <li><a href="">CONSO ANIMO</a></li>
-      <li><a href="">VET CLIC</a></li>
-      <li><a href="">WAMIZ BOX</a></li>
-      <li><a href="">WAMIZ COACH</a></li>
-      <li><a href="">WAMIZ RUN</a></li>
+      <li><a href="http://www.adopte-moi.com/" target="_blank">ADOPTE-MOI</a></li>
+      <li><a href="https://www.consoanimo.com/" target="_blank">CONSO ANIMO</a></li>
+      <li><a href="https://www.vetclic.fr/" target="_blank">VET CLIC</a></li>
+      <li><a href="https://box.wamiz.com/" target="_blank">WAMIZ BOX</a></li>
+      <li><a href="https://wamiz.com/annuaire/comportementaliste-et-coach-canin-dog-evolution-8130.html" target="_blank">WAMIZ COACH</a></li>
+      <li><a href="https://wamiz.run/" target="_blank">WAMIZ RUN</a></li>
     </ul>
   </nav>
   <hr id="footer-hr">
