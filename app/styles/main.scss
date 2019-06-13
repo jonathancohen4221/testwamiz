@@ -120,8 +120,7 @@ body{
     }
 
     .bar1, .bar2, .bar3 {
-      width: 17.2px;
-      height: 2.3px;
+      @include dimensions(17.2px,2.3px);
       background-color: $c-slate-grey-two;
       margin: 6px 0;
       transition: 0.4s;
@@ -222,6 +221,11 @@ body{
       text-align: center;
       @include absolute-bottom-left(21px,50%);
       margin-left: -137px;
+      @include btn-hover-out;
+
+      &:hover{
+        @include btn-hover-in;
+      }
     }
 
     #close{
@@ -326,14 +330,14 @@ body{
         }
 
         span{
-          width: 39px;
-          height: 39px;
+          @include dimensions(39px,39px);
           background-color: $c-light-blue-grey;
           border-radius: 50%;
           display: block;
           position: relative;
           border: 1px solid transparent;
           cursor: pointer;
+          transition: background-color .3s ease-in-out;
 
           &:before{
             content:"";
@@ -348,6 +352,7 @@ body{
           &:hover{
             background-color: $c-white-five;
             border: 1px solid $c-light-blue-grey;
+            transition: background-color .3s ease-in-out;
 
             &:before {
               background-color: $c-light-blue-grey;
@@ -409,8 +414,7 @@ body{
     margin: 60px 0;
 
     @media #{$w-desktop} {
-      width: 650px;
-      height: 320px;
+      @include dimensions(650px,320px);
       padding: 50px 24% 0;
       margin: 60px 0;
     }
@@ -533,8 +537,7 @@ body{
     }
 
     .table-spec {
-      width:260px;
-      height:92px;
+      @include dimensions(260px,92px);
       border:1px dashed $c-warm-grey-two;
       border-collapse:collapse;
       padding:5px;
@@ -756,8 +759,7 @@ body{
   }
 
   button{
-    width: 114.2px;
-    height: 43.7px;
+    @include dimensions(114.2px,43.7px);
     background-color: $c-slate-grey-two;
     color: $c-white-five;
     font-family: "Poppins-Regular";

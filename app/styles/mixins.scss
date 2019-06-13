@@ -65,6 +65,16 @@
 @mixin bg-hover-out{
   transition: background-color .3s ease-in-out;
 }
+
+@mixin btn-hover-in{
+  background-color: $c-light-blue-grey;
+  color: $c-white-five;
+  transition: background-color .3s ease-in-out;
+}
+
+@mixin btn-hover-out{
+  transition: background-color .3s ease-in-out;
+}
 $w-desktop: "(min-width: 1330px)";
 $w-end-desktop: "(max-width: 1330px)";
 $w-responsive: "(max-width: 1080px)";
