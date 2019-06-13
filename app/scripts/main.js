@@ -4,23 +4,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let mobileMenu = document.getElementById('settings');
     let leftMenu = document.getElementById('left-menu');
-    let close = document.getElementById('close');
+    let menuClose = document.getElementById('close');
 
     mobileMenu.addEventListener('click', function() {
         leftMenu.classList.add('visible');
-        close.classList.add('visible');
+        menuClose.classList.add('visible');
     });
 
-    close.addEventListener('click', function() {
+    menuClose.addEventListener('click', function() {
         leftMenu.classList.remove('visible');
-        close.classList.remove('visible');
+        menuClose.classList.remove('visible');
     });
 
-    let ul = document.getElementById('left-menu-list');  // Parent
+    let ul = document.getElementById('left-menu-list');
 
-    ul.addEventListener('click', function(e) {
+    ul.addEventListener('click', function() {
         leftMenu.classList.remove('visible');
-        close.classList.remove('visible');
+        menuClose.classList.remove('visible');
     });
 
 
@@ -45,19 +45,20 @@ document.addEventListener('DOMContentLoaded', function() {
         change();
     });
 
-
     /* ---------------ACCORDION--------------- */
 
     let accordionWrapperNode = document.getElementById('specifications');
     let accordionHeadline = accordionWrapperNode.getElementsByTagName('h2');
 
-    function accordionToggle (e) {
-        e.preventDefault();
-        let accordionContent = this.nextSibling.nextSibling;
+    function accordionToggle () {
+        let accordionContent = this.nextElementSibling;
+        let plus = accordionContent.previousElementSibling;
         if (accordionContent.classList.contains('hide')) {
+            plus.classList.add('visible');
             accordionContent.className = '';
         } else {
             accordionContent.className = 'hide';
+            plus.classList.remove('visible');
         }
     }
 

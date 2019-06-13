@@ -376,7 +376,7 @@ body{
         line-height: 17px;
         padding: 0 15px;
         text-align: center;
-        
+
         p{
           max-width: 85%;
         }
@@ -384,7 +384,7 @@ body{
       @media #{$w-mobile} {
         text-align: left;
       }
-        span:first-of-type{
+      span:first-of-type{
         font-family: Nunito-SemiBold;
         font-weight: 600;
       }
@@ -497,7 +497,7 @@ body{
       background-color: $c-white-two;
 
       &:after{
-        content:"—";
+        content:"+";
         @include absolute-top-right(0px,-20px);
         background-color: $c-light-blue-grey;
         color: $c-white-five;
@@ -515,6 +515,12 @@ body{
       span{
         width: 80%;
         display: block;
+      }
+
+      &.visible{
+        &:after{
+          content:"—";
+        }
       }
     }
 
